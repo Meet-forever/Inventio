@@ -44,7 +44,7 @@ const routes = [
         label: "Code Generation",
         icon: Code2Icon,
         href: "/code",
-        color: "text-green-700",
+        color: "text-amber-500",
     },
     {
         label: "Settings",
@@ -56,9 +56,10 @@ const routes = [
 
 interface SidebarProps{
     apiLimitCount: number;
+    isPro: boolean;
 };
 
-const Sidebar = ({apiLimitCount = 0}:SidebarProps) => {
+const Sidebar = ({apiLimitCount = 0, isPro=false}:SidebarProps) => {
     const  pathname =  usePathname();
     return (
         <div className='space-y-4 py-4 flex flex-col justify-between h-full bg-[#111827] text-white'>
@@ -84,6 +85,7 @@ const Sidebar = ({apiLimitCount = 0}:SidebarProps) => {
             </div>
             <FreeCounter 
                 apiLimitCount={apiLimitCount}
+                isPro={isPro}
             />
         </div>
     )

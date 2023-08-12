@@ -37,8 +37,8 @@ const features = [
         label: "Code Generation",
         icon: Code2Icon,
         href: "/code",
-        color: "text-green-700",
-        bgColor: "bg-green-700/10",
+        color: "text-amber-500",
+        bgColor: "bg-amber-500/10",
     }
 ]
 export default function DashboardPage() {
