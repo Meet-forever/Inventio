@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Inventio: AI SAAS Platform
 
-## Getting Started
+Welcome to the AI SAAS Platform, your one-stop solution for harnessing the power of AI to bring your ideas to life! The platform empowers users to interact with AI-driven services, enabling a seamless transition from text prompts to rich media outputs. With a focus on versatility and creativity, the platform offers five distinct features to fulfill your creative and practical needs.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+#### General Chat with AI
+Have a question or need information? Engage in a conversation with our AI and get the answers you're looking for.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Text-to-Image Generation
+Transform your textual ideas into captivating images! Our AI-powered image generation brings your words to life.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Text-to-Video Generation
+Unleash your imagination by converting text prompts into engaging videos. Create visual stories effortlessly.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Text-to-Audio Generation
+Elevate your content with audio! Our AI seamlessly converts text into high-quality audio, perfect for podcasts, presentations, and more.
 
-## Learn More
+#### Text-to-Code Generation
+Need a coding solution? Describe your requirements, and watch as our AI generates functional code snippets for you.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Payment and Free Trial
+I've integrated Stripe API for secure and hassle-free payments. Choose a plan that suits your needs and enjoy unlimited access to our AI SAAS platform. It also provides 5 free trial prompts, allowing the users to experience the power of AI before making a commitment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Users also have ability cancel their subscription and delete their account from the platform.
 
-## Deploy on Vercel
+### Getting Started
+Sign up for an account on our website.
+Choose a plan that fits your requirements.
+Access our AI-powered features and start creating!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Installation
+To use our platform locally, follow these steps:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Clone this repository: git clone https://github.com/Meet-forever/Inventio.git
+- Navigate to the project directory: cd ai-saas-platform
+- Install dependencies: npm install
+- Configure your Stripe API keys in config.js.
+- Start the server: npm start
+- Access the platform at: http://localhost:3000
+
+
+### Contributing
+This is just a demo project to understand how different APIs integerate with each other. Feel free to fork this repository, and make improvements to the project.
+
+### Credits
+I used the following video to understand the process and develop the project: https://youtu.be/ffJ38dBzrlY
+
+
+## Website Demo
+
+### Landing Page
+![landing page](docs/landingpage.png)
+
+
+### Sign-up
+![signup](docs/signup.png)
+
+### Sign-in
+![signin](docs/signin.png)
+
+### Dashboard
+![dashboard](docs/dashboard.png)
+
+### Feature demo
+![conversation page](docs/conversation.png)
+
+### Payment Page
+![paymentpage](docs/paymentpage.png)
