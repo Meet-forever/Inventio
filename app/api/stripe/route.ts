@@ -8,6 +8,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 const settingUrl = absoluteUrl("/settings");
 
+export const dynamic = 'force-dynamic'
 
 export async function GET() {
     try {
