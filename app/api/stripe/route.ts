@@ -1,20 +1,20 @@
-import { auth, currentUser} from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 import prismadb from "@/lib/prismadb";
 import { stripe } from "@/lib/stripe";
 
 import { absoluteUrl } from "@/lib/utils";
+import { getServerSession } from "next-auth";
 
 const settingUrl = absoluteUrl("/settings");
 
 
 export async function GET() {
     try {
-        const { userId } = auth();
-        const user = await currentUser();
+        const session = await getServerSession();
+        const userId = session?.user?.email;
 
-        if(!userId || !user) return new NextResponse("Unauthorized", {status: 401})
+        if(!userId) return new NextResponse("Unauthorized", {status: 401})
 
         const usreSubscription = await prismadb.userSubscription.findUnique({
             where: {userId}
@@ -33,7 +33,7 @@ export async function GET() {
             payment_method_types: ["card"],
             mode: "subscription",
             billing_address_collection: "auto",
-            customer_email: user.emailAddresses[0].emailAddress,
+            customer_email: userId,
             line_items: [
                 {
                     price_data: {

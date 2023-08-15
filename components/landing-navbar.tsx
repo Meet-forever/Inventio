@@ -3,7 +3,7 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { useAuth } from "@clerk/nextjs";
+// import { useAuth } from "@clerk/nextjs";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -17,7 +17,8 @@ const font = Montserrat({
 import React from 'react'
 
 export const LandingNavbar = () => {
-    const { isSignedIn } = useAuth();
+    // const { isSignedIn } = useAuth();
+    const isSignedIn = false;
     return (
         <nav className="p-4 bg-transparent flex items-center justify-between">
             <Link href={"/"} className="flex items-center">
@@ -29,7 +30,7 @@ export const LandingNavbar = () => {
                 </h1>
             </Link>
             <div className="flex items-center gap-x-2">
-                <Link href={isSignedIn? "/dashboard": "/sign-up"}>
+                <Link href={"/api/auth/signin"}>
                     <Button variant="outline" className="rounded-full">
                         Get Started
                     </Button>

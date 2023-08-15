@@ -10,7 +10,6 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.23.2",
     "@hookform/resolvers": "^3.2.0",
     "@huggingface/inference": "^1.8.0",
     "@prisma/client": "^5.1.1",
@@ -32,6 +31,7 @@
     "langchain": "^0.0.126",
     "lucide-react": "^0.265.0",
     "next": "13.4.12",
+    "next-auth": "^4.23.0",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",

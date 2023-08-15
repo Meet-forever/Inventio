@@ -1,13 +1,14 @@
 "use client";
 
-import { useAuth } from '@clerk/nextjs'
 import Link from 'next/link';
 import TypewriterComponent from "typewriter-effect";
 import { Button } from '@/components/ui/button';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 
 export const LandingHero = () => {
-    const { isSignedIn } = useAuth();
+    const {data: auth} = useSession()
+    
     return (
         <div className='text-white font-bold py-36 text-center space-y-5'>
             <div className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl space-y-5 font-extrabold'>
@@ -31,7 +32,7 @@ export const LandingHero = () => {
                 Boost your productivity using AI
             </div>
             <div>
-                <Link href={isSignedIn?  "/dashboard" : "/sign-up"}>
+                <Link href={"/api/auth/signin"}>
                     <Button variant="premium" className='md:text-lg p-4 md:p-6 rounded-full font-semibold'>
                         Start Generating For Free
                     </Button>
@@ -40,6 +41,13 @@ export const LandingHero = () => {
             <div className='text-xs md:text-sm font-light text-zinc-400'>
                 No credit card required!
             </div>
+            {/* <Button onClick={() => signIn()}>
+                Sign in
+            </Button>
+            {auth? auth?.user?.email : null}
+            <Button onClick={() => signOut()}>
+                Sign Out
+            </Button> */}
         </div>
     )
 }

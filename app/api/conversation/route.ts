@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server"
 import { HuggingFaceInference } from "langchain/llms/hf";
-import { auth } from "@clerk/nextjs";
 import { increaseApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
+import { getServerSession } from "next-auth";
 
 const model = new HuggingFaceInference({
   model: "gpt2",
@@ -13,7 +13,8 @@ const model = new HuggingFaceInference({
 
 export async function POST(req:Request) {
     try {
-        const {userId} = auth();
+        const session = await getServerSession();
+        const userId = session?.user?.email
         const body = await req.json();
         const { messages } = body;
         if(!userId){

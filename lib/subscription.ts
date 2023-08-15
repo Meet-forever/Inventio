@@ -1,11 +1,15 @@
-import { auth } from "@clerk/nextjs";
+// import { auth } from "@clerk/nextjs";
 
 import prismadb from "@/lib/prismadb";
+import { getServerSession } from "next-auth";
 
 const DAY_IN_MS = 86_400_000;
 
 export const checkSubscription = async () =>  {
-    const { userId } = auth();
+    // const { userId } = auth();
+    const session =  await getServerSession();
+    const user = session?.user;
+    const userId = user?.email;
 
     if(!userId) return false;
 
